@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="id">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="#090d14" name="theme-color"/>
+  <meta content="Portofolio Pingkan Alvina Agasta, siswi Rekayasa Perangkat Lunak yang mempelajari pengembangan web, aplikasi, dan desain antarmuka." name="description"/>
+  <title>
+   Pingkan Alvina Agasta &mdash; Portofolio RPL
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/></noscript>
+  <script>
+   tailwind.config = {
+
+      theme: {
+
+        extend: {
+
+          colors: {
+
+            darkBg: '#090D14',
+
+            cardBg: '#101827',
+
+            cyanGlow: '#00E5FF',
+
+            blueGlow: '#3B82F6',
+
+            lightBg: '#F8FAFC'
+
+          },
+
+          fontFamily: {
+
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+
+            serif: ['"Instrument Serif"', 'serif']
+
+          }
+
+        }
+
+      }
+
+    };
+  </script>
+  <style>
+   :root { color-scheme: dark; }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-padding-top: 90px; }
+
+    body {
+
+      margin: 0;
+
+      overflow-x: hidden;
+
+      background: #090D14;
+
+      color: #F3F4F6;
+
+      font-family: "Plus Jakarta Sans", sans-serif;
+
+    }
+
+    .serif-italic { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; }
+
+    .glass-card {
+
+      background: rgba(16, 24, 39, .78);
+
+      border: 1px solid rgba(148, 163, 184, .16);
+
+      backdrop-filter: blur(14px);
+
+    }
+
+    .glass-card-hover { transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
+
+    .glass-card-hover:hover {
+
+      transform: translateY(-5px);
+
+      border-color: rgba(0, 229, 255, .42);
+
+      box-shadow: 0 18px 45px rgba(0, 229, 255, .08);
+
+    }
+
+    .section-light { background: #F8FAFC; color: #0F172A; }
+    /* Render konten jauh di bawah viewport saat diperlukan oleh browser. */
+    @supports (content-visibility: auto) {
+      main > section { content-visibility: auto; contain-intrinsic-size: auto 800px; }
+    }
+
+    .section-tag {
+
+      display: inline-flex; align-items: center; gap: .55rem;
+
+      padding: .45rem .8rem; border: 1px solid rgba(34, 211, 238, .25);
+
+      border-radius: 999px; background: rgba(34, 211, 238, .08);
+
+      color: #22D3EE; font-size: .7rem; font-weight: 700;
+
+      letter-spacing: .12em; text-transform: uppercase;
+
+    }
+
+    .section-light .section-tag { color: #0E7490; background: #ECFEFF; border-color: #A5F3FC; }
+
+    .wave-divider { width: 100%; overflow: hidden; line-height: 0; pointer-events: none; }
+
+    .wave-divider svg { display: block; width: 100%; height: 64px; }
+
+    @media (min-width: 768px) { .wave-divider svg { height: 100px; } }
+
+    .phone-mockup {
+
+      width: min(42vw, 230px); min-width: 150px; height: 430px;
+
+      background: #020617; border: 8px solid #1E293B; border-radius: 32px;
+
+      box-shadow: 0 20px 45px rgba(15, 23, 42, .2); position: relative; overflow: hidden;
+
+    }
+
+    .phone-notch {
+
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+
+      width: 88px; height: 17px; background: #1E293B;
+
+      border-radius: 0 0 12px 12px; z-index: 2;
+
+    }
+
+    .nav-link { transition: color .2s ease; }
+
+    .nav-link:hover, .nav-link:focus-visible { color: #22D3EE; }
+
+    .field {
+
+      width: 100%; border-radius: 12px; padding: 13px 14px;
+
+      background: rgba(15, 23, 42, .88); border: 1px solid #334155;
+
+      color: #F8FAFC; font: inherit; font-size: .8rem; outline: none;
+
+      transition: border-color .2s ease, box-shadow .2s ease;
+
+    }
+
+    .field:focus { border-color: #22D3EE; box-shadow: 0 0 0 3px rgba(34, 211, 238, .12); }
+
+    .field::placeholder { color: #64748B; }
+
+    ::selection { background: #22D3EE; color: #020617; }
+
+    ::-webkit-scrollbar { width: 8px; }
+
+    ::-webkit-scrollbar-track { background: #090D14; }
+
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 99px; }
+
+    ::-webkit-scrollbar-thumb:hover { background: #0891B2; }
+
+    @media (max-width: 640px) {
+
+      .phone-mockup { height: 350px; border-width: 6px; border-radius: 27px; }
+
+      .phone-content { transform: scale(.88); transform-origin: top left; width: 114%; }
+
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+
+    }
+  </style>
+ </head>
+ <body class="antialiased">
+  <!-- NAVBAR -->
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#090D14]/90 backdrop-blur-xl">
+   <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3.5 lg:px-8">
+    <a aria-label="Pingkan Alvina, kembali ke beranda" class="flex shrink-0 items-center gap-3" href="#home">
+     <span class="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 text-lg font-extrabold text-white shadow-lg shadow-cyan-500/20">
+      PA
+     </span>
+     <span class="leading-tight">
+      <span class="block text-sm font-extrabold tracking-tight text-white">
+       PINGKAN ALVINA
+      </span>
+      <span class="mt-1 block text-[9px] font-bold uppercase tracking-[.18em] text-cyan-400">
+       Siswa RPL &middot; SMK
+      </span>
+     </span>
+    </a>
+    <nav aria-label="Navigasi utama" class="hidden items-center gap-5 text-xs font-semibold text-slate-300 lg:flex">
+     <a class="nav-link" href="#tentang">
+      Tentang
+     </a>
+     <a class="nav-link" href="#keahlian">
+      Keahlian
+     </a>
+     <a class="nav-link" href="#prestasi">
+      Prestasi
+     </a>
+     <a class="nav-link" href="#proyek">
+      Proyek
+     </a>
+     <a class="nav-link" href="#pengalaman">
+      Perjalanan
+     </a>
+     <a class="nav-link" href="#testimoni">
+      Testimoni
+     </a>
+    </nav>
+    <a class="hidden items-center gap-2 rounded-full bg-white px-4 py-2.5 text-xs font-bold text-slate-950 transition hover:bg-cyan-300 sm:inline-flex" href="#kontak">
+     Hubungi Saya
+     <i class="fa-solid fa-arrow-up-right-from-square text-[10px]">
+     </i>
+    </a>
+    <button aria-controls="mobileMenu" aria-expanded="false" aria-label="Buka menu navigasi" class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 text-white lg:hidden" id="menuToggle">
+     <i class="fa-solid fa-bars">
+     </i>
+    </button>
+   </div>
+   <nav aria-label="Navigasi seluler" class="hidden border-t border-white/10 bg-[#090D14] px-5 py-4 lg:hidden" id="mobileMenu">
+    <div class="grid grid-cols-2 gap-3 text-sm text-slate-300">
+     <a class="nav-link py-2" href="#tentang">
+      Tentang Saya
+     </a>
+     <a class="nav-link py-2" href="#keahlian">
+      Keahlian
+     </a>
+     <a class="nav-link py-2" href="#prestasi">
+      Prestasi
+     </a>
+     <a class="nav-link py-2" href="#proyek">
+      Proyek
+     </a>
+     <a class="nav-link py-2" href="#pengalaman">
+      Perjalanan
+     </a>
+     <a class="nav-link py-2" href="#testimoni">
+      Testimoni
+     </a>
+     <a class="nav-link py-2" href="#kontak">
+      Kontak
+     </a>
+    </div>
+   </nav>
+  </header>
+  <main>
+   <!-- HERO -->
+   <section class="relative overflow-hidden px-5 pb-24 pt-32 sm:pt-36 lg:px-8 lg:pb-32" id="home">
+    <div class="pointer-events-none absolute -left-24 top-24 h-80 w-80 rounded-full bg-cyan-500/10 blur-3xl">
+    </div>
+    <div class="pointer-events-none absolute -right-20 top-40 h-96 w-96 rounded-full bg-blue-600/15 blur-3xl">
+    </div>
+    <div class="relative mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
+     <div class="relative z-10">
+      <span class="section-tag">
+       <span class="h-2 w-2 animate-pulse rounded-full bg-cyan-400">
+       </span>
+       Rekayasa Perangkat Lunak
+      </span>
+      <h1 class="mt-6 text-4xl font-extrabold leading-[1.12] tracking-tight text-white sm:text-5xl lg:text-6xl">
+       Mengembangkan solusi digital
+       <span class="serif-italic block pt-1 text-5xl font-normal text-cyan-400 sm:text-6xl lg:text-7xl">
+        kreatif &amp; bermakna.
+       </span>
+      </h1>
+      <p class="mt-6 max-w-xl text-sm leading-7 text-slate-400 sm:text-base">
+       Halo! Saya
+       <strong class="text-white">
+        Pingkan Alvina Agasta
+       </strong>
+       , siswi kelas XI jurusan Rekayasa Perangkat Lunak. Saya sedang mengembangkan kemampuan dalam pembuatan website, antarmuka interaktif, dan aplikasi berbasis kebutuhan pengguna.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+       <a class="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5" href="#proyek">
+        Lihat Karya Saya
+        <i class="fa-solid fa-arrow-right text-xs">
+        </i>
+       </a>
+       <a class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/60 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-cyan-400/50 hover:bg-slate-800" href="#kontak">
+        <i class="fa-regular fa-paper-plane">
+        </i>
+        Kontak
+       </a>
+      </div>
+      <div class="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-xs text-slate-400">
+       <span>
+        <i class="fa-solid fa-location-dot mr-2 text-cyan-400">
+        </i>
+        Jember, Jawa Timur
+       </span>
+       <span>
+        <i class="fa-solid fa-code mr-2 text-cyan-400">
+        </i>
+        Web Development
+       </span>
+       <span>
+        <i class="fa-solid fa-graduation-cap mr-2 text-cyan-400">
+        </i>
+        Pelajar RPL
+       </span>
+      </div>
+     </div>
+     <div class="relative mx-auto w-full max-w-md py-5 sm:py-8">
+      <div class="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[85%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-slate-700/50">
+      </div>
+      <div class="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[110%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-slate-800/60">
+      </div>
+      <div class="relative z-10 rotate-[-2deg] rounded-[28px] border border-white/70 bg-white p-3 shadow-2xl shadow-black/40 transition duration-500 hover:rotate-0 sm:p-4">
+       <div class="flex items-center justify-between px-2 pb-3 text-xs text-slate-400">
+        <span class="flex gap-1.5">
+         <i class="h-2.5 w-2.5 rounded-full bg-rose-300">
+         </i>
+         <i class="h-2.5 w-2.5 rounded-full bg-amber-300">
+         </i>
+         <i class="h-2.5 w-2.5 rounded-full bg-emerald-300">
+         </i>
+        </span>
+        <span class="font-mono">
+         profile.jpg
+        </span>
+       </div>
+       <div class="relative aspect-[4/5] overflow-hidden rounded-[20px] bg-slate-100">
+        <img alt="Foto profil Pingkan Alvina Agasta" class="h-full w-full object-cover object-top" fetchpriority="high" src="fotopingkan.png"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/65 via-transparent to-transparent">
+        </div>
+        <div class="absolute bottom-5 left-5 text-white">
+         <p class="text-xs text-slate-200">
+          PORTFOLIO / 2026
+         </p>
+         <p class="mt-1 text-xl font-bold">
+          Pingkan Alvina
+         </p>
+         <p class="text-xs text-slate-200">
+          Student &middot; Software Engineering
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="absolute -left-2 top-[18%] z-20 rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-[10px] font-bold text-slate-800 shadow-xl sm:-left-8 sm:text-xs">
+       <i class="fa-solid fa-code mr-2 text-cyan-600">
+       </i>
+       Build &middot; Learn &middot; Repeat
+      </div>
+      <div class="absolute -right-1 bottom-[8%] z-20 rounded-2xl border border-slate-700 bg-[#101827] p-3 font-mono text-[10px] leading-5 shadow-2xl sm:-right-8 sm:p-4 sm:text-xs">
+       <div class="mb-2 flex items-center justify-between gap-5 border-b border-slate-700 pb-2 text-slate-400">
+        <span>
+         pingkan.js
+        </span>
+        <i class="fa-solid fa-terminal text-cyan-400">
+        </i>
+       </div>
+       <p>
+        <span class="text-purple-400">
+         const
+        </span>
+        <span class="text-white">
+         developer
+        </span>
+        = {
+       </p>
+       <p class="pl-3">
+        <span class="text-slate-400">
+         name:
+        </span>
+        <span class="text-cyan-300">
+         "Pingkan"
+        </span>
+        ,
+       </p>
+       <p class="pl-3">
+        <span class="text-slate-400">
+         focus:
+        </span>
+        <span class="text-cyan-300">
+         "Web Dev"
+        </span>
+       </p>
+       <p>
+        }
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <div class="wave-divider">
+    <svg aria-hidden="true" fill="none" preserveaspectratio="none" viewbox="0 0 1440 120">
+     <path d="M0 32C280 110 520 10 800 70C1080 130 1280 30 1440 60V120H0V32Z" fill="#F8FAFC">
+     </path>
+    </svg>
+   </div>
+   <!-- TENTANG -->
+   <section class="section-light px-5 py-20 sm:py-24 lg:px-8" id="tentang">
+    <div class="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
+     <div class="relative mx-auto flex w-full max-w-lg items-center justify-center gap-3 py-5 sm:gap-6">
+      <div class="absolute h-64 w-64 rounded-full bg-cyan-200/60 blur-3xl">
+      </div>
+      <div class="phone-mockup z-10 -rotate-6 transition duration-500 hover:rotate-0">
+       <div class="phone-notch">
+       </div>
+       <div class="phone-content space-y-3 p-3 pt-7 font-mono text-[10px] text-white">
+        <div class="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-900 p-2">
+         <span>
+          <i class="fa-solid fa-code mr-2 text-cyan-400">
+          </i>
+          Acode Editor
+         </span>
+         <i class="fa-solid fa-play text-emerald-400">
+         </i>
+        </div>
+        <div class="rounded-lg border border-slate-800 bg-slate-950 p-2.5 leading-6">
+         <p class="text-slate-500">
+          01
+          <span class="ml-2 text-purple-400">
+           const
+          </span>
+          <span class="text-yellow-300">
+           profile
+          </span>
+          = {
+         </p>
+         <p class="text-slate-500">
+          02
+          <span class="ml-2 text-slate-400">
+           name:
+          </span>
+          <span class="text-emerald-300">
+           "Pingkan"
+          </span>
+          ,
+         </p>
+         <p class="text-slate-500">
+          03
+          <span class="ml-2 text-slate-400">
+           role:
+          </span>
+          <span class="text-emerald-300">
+           "Student"
+          </span>
+          ,
+         </p>
+         <p class="text-slate-500">
+          04
+          <span class="ml-2 text-slate-400">
+           focus:
+          </span>
+          <span class="text-emerald-300">
+           "Web Dev"
+          </span>
+         </p>
+         <p class="text-slate-500">
+          05 }
+         </p>
+        </div>
+        <div class="rounded-lg bg-slate-900 p-2 text-cyan-300">
+         /* Keep learning */
+        </div>
+        <div class="h-20 rounded-lg border border-slate-800 bg-slate-900/80 p-2 text-slate-400">
+         HTML &middot; CSS &middot; JavaScript
+         <br/>
+         PHP &middot; MySQL &middot; Laravel
+        </div>
+       </div>
+      </div>
+      <div class="phone-mockup z-10 rotate-6 translate-y-4 transition duration-500 hover:rotate-0">
+       <div class="phone-notch">
+       </div>
+       <div class="phone-content space-y-3 p-3 pt-7 font-mono text-[10px] text-white">
+        <div class="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-900 p-2">
+         <span>
+          <i class="fa-solid fa-terminal mr-2 text-emerald-400">
+          </i>
+          Terminal
+         </span>
+         <span class="rounded bg-emerald-500/15 px-1.5 py-0.5 text-emerald-300">
+          READY
+         </span>
+        </div>
+        <div class="space-y-3 rounded-lg border border-slate-800 bg-slate-950 p-3">
+         <p class="text-slate-400">
+          $ npm run dev
+         </p>
+         <p class="text-cyan-300">
+          &gt; Starting development server...
+         </p>
+         <p class="text-emerald-400">
+          &checkmark; Server is ready
+         </p>
+         <p class="break-all text-slate-400">
+          ➜ Local:
+          <span class="text-cyan-300">
+           localhost:5173
+          </span>
+         </p>
+        </div>
+        <div class="grid grid-cols-2 gap-2 text-center">
+         <span class="rounded-lg bg-slate-800 p-2 text-cyan-300">
+          Frontend
+         </span>
+         <span class="rounded-lg bg-slate-800 p-2 text-emerald-300">
+          Backend
+         </span>
+        </div>
+       </div>
+      </div>
+      <div class="absolute -bottom-1 left-1/2 z-20 -translate-x-1/2 whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-2.5 text-[10px] font-bold text-slate-700 shadow-xl sm:text-xs">
+       <i class="fa-solid fa-lightbulb mr-2 text-emerald-500">
+       </i>
+       Belajar, mencoba, berkembang
+      </div>
+     </div>
+     <div>
+      <span class="section-tag">
+       <span class="h-2 w-2 rounded-full bg-cyan-500">
+       </span>
+       Tentang Saya
+      </span>
+      <h2 class="mt-5 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl lg:text-5xl">
+       Koding adalah kanvas saya.
+       <span class="serif-italic block text-4xl font-normal text-cyan-700 sm:text-5xl">
+        Ide adalah awalnya.
+       </span>
+      </h2>
+      <p class="mt-5 text-sm leading-7 text-slate-600 sm:text-base">
+       Saya merupakan siswi kelas XI jurusan
+       <strong class="text-cyan-800">
+        Rekayasa Perangkat Lunak (RPL)
+       </strong>
+       yang tertarik pada pengembangan website dan aplikasi. Saya senang belajar teknologi baru, merancang tampilan yang mudah digunakan, dan mengubah ide menjadi proyek yang bisa dicoba.
+      </p>
+      <div class="mt-8 grid grid-cols-3 gap-3 border-t border-slate-200 pt-6">
+       <div class="rounded-2xl border border-slate-200 bg-white p-3 sm:p-4">
+        <p class="text-2xl font-extrabold text-cyan-700 sm:text-3xl">
+         RPL
+        </p>
+        <p class="mt-1 text-[10px] leading-4 text-slate-500 sm:text-xs">
+         Bidang belajar
+        </p>
+       </div>
+       <div class="rounded-2xl border border-slate-200 bg-white p-3 sm:p-4">
+        <p class="text-2xl font-extrabold text-blue-700 sm:text-3xl">
+         Web
+        </p>
+        <p class="mt-1 text-[10px] leading-4 text-slate-500 sm:text-xs">
+         Minat utama
+        </p>
+       </div>
+       <div class="rounded-2xl border border-slate-200 bg-white p-3 sm:p-4">
+        <p class="text-2xl font-extrabold text-emerald-700 sm:text-3xl">
+         Terus
+        </p>
+        <p class="mt-1 text-[10px] leading-4 text-slate-500 sm:text-xs">
+         Berkembang
+        </p>
+       </div>
+      </div>
+      <p class="mt-3 text-[11px] leading-5 text-slate-500">
+       Catatan: gunakan angka statistik hanya jika sesuai dengan pengalaman dan proyek yang benar-benar kamu miliki.
+      </p>
+     </div>
+    </div>
+   </section>
+   <div class="wave-divider section-light">
+    <svg aria-hidden="true" fill="none" preserveaspectratio="none" viewbox="0 0 1440 120">
+     <path d="M0 0C320 100 600 20 900 80C1200 130 1360 40 1440 80V120H0V0Z" fill="#090D14">
+     </path>
+    </svg>
+   </div>
+   <!-- KEAHLIAN -->
+   <section class="px-5 py-20 sm:py-24 lg:px-8" id="keahlian">
+    <div class="mx-auto max-w-7xl">
+     <span class="section-tag">
+      <span class="h-2 w-2 rounded-full bg-cyan-400">
+      </span>
+      Keahlian &amp; Teknologi
+     </span>
+     <div class="mt-5 grid gap-5 lg:grid-cols-[1.3fr_.7fr] lg:items-end">
+      <h2 class="text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
+       Teknologi yang sedang
+       <span class="serif-italic text-cyan-400">
+        saya pelajari.
+       </span>
+      </h2>
+      <p class="text-sm leading-7 text-slate-400">
+       Beberapa keterampilan yang saya gunakan dan kembangkan melalui latihan, pembelajaran, serta proyek sekolah.
+      </p>
+     </div>
+     <div class="mt-10 grid gap-5 md:grid-cols-2">
+      <article class="glass-card glass-card-hover rounded-3xl p-6 sm:p-8">
+       <div class="flex items-center justify-between">
+        <span class="grid h-12 w-12 place-items-center rounded-2xl bg-rose-500/10 text-xl text-rose-400">
+         <i class="fa-solid fa-server">
+         </i>
+        </span>
+        <span class="rounded-full border border-rose-400/20 bg-rose-400/10 px-3 py-1 text-[10px] font-bold text-rose-300">
+         BACKEND
+        </span>
+       </div>
+       <h3 class="mt-5 text-xl font-bold text-white">
+        PHP &amp; Laravel
+       </h3>
+       <p class="mt-2 text-sm leading-6 text-slate-400">
+        Mempelajari logika server, routing, konsep MVC, pengolahan form, dan penghubungan aplikasi dengan database.
+       </p>
+       <div class="mt-5 flex flex-wrap gap-2">
+        <span class="skill-chip">
+         PHP
+        </span>
+        <span class="skill-chip">
+         Laravel
+        </span>
+        <span class="skill-chip">
+         MVC
+        </span>
+        <span class="skill-chip">
+         CRUD
+        </span>
+       </div>
+      </article>
+      <article class="glass-card glass-card-hover rounded-3xl p-6 sm:p-8">
+       <div class="flex items-center justify-between">
+        <span class="grid h-12 w-12 place-items-center rounded-2xl bg-amber-500/10 text-xl text-amber-300">
+         <i class="fa-solid fa-code">
+         </i>
+        </span>
+        <span class="rounded-full border border-amber-400/20 bg-amber-400/10 px-3 py-1 text-[10px] font-bold text-amber-300">
+         FRONTEND
+        </span>
+       </div>
+       <h3 class="mt-5 text-xl font-bold text-white">
+        HTML, CSS &amp; JavaScript
+       </h3>
+       <p class="mt-2 text-sm leading-6 text-slate-400">
+        Membangun struktur halaman, mengatur tata letak responsif, serta menambahkan interaksi dasar pada website.
+       </p>
+       <div class="mt-5 flex flex-wrap gap-2">
+        <span class="skill-chip">
+         HTML5
+        </span>
+        <span class="skill-chip">
+         CSS
+        </span>
+        <span class="skill-chip">
+         Tailwind CSS
+        </span>
+        <span class="skill-chip">
+         JavaScript
+        </span>
+       </div>
+      </article>
+      <article class="glass-card glass-card-hover rounded-3xl p-6 sm:p-8">
+       <div class="flex items-center justify-between">
+        <span class="grid h-12 w-12 place-items-center rounded-2xl bg-cyan-500/10 text-xl text-cyan-300">
+         <i class="fa-solid fa-database">
+         </i>
+        </span>
+        <span class="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-[10px] font-bold text-cyan-300">
+         DATABASE
+        </span>
+       </div>
+       <h3 class="mt-5 text-xl font-bold text-white">
+        MySQL &amp; Database
+       </h3>
+       <p class="mt-2 text-sm leading-6 text-slate-400">
+        Mempelajari pembuatan tabel, relasi data, query SQL, serta operasi tambah, tampil, ubah, dan hapus data.
+       </p>
+       <div class="mt-5 flex flex-wrap gap-2">
+        <span class="skill-chip">
+         MySQL
+        </span>
+        <span class="skill-chip">
+         SQL
+        </span>
+        <span class="skill-chip">
+         phpMyAdmin
+        </span>
+        <span class="skill-chip">
+         ERD dasar
+        </span>
+       </div>
+      </article>
+      <article class="glass-card glass-card-hover rounded-3xl p-6 sm:p-8">
+       <div class="flex items-center justify-between">
+        <span class="grid h-12 w-12 place-items-center rounded-2xl bg-purple-500/10 text-xl text-purple-300">
+         <i class="fa-brands fa-figma">
+         </i>
+        </span>
+        <span class="rounded-full border border-purple-400/20 bg-purple-400/10 px-3 py-1 text-[10px] font-bold text-purple-300">
+         DESIGN &amp; TOOLS
+        </span>
+       </div>
+       <h3 class="mt-5 text-xl font-bold text-white">
+        UI/UX &amp; Tools
+       </h3>
+       <p class="mt-2 text-sm leading-6 text-slate-400">
+        Mengenal penyusunan layout, desain antarmuka, prototipe sederhana, dan pengelolaan kode proyek.
+       </p>
+       <div class="mt-5 flex flex-wrap gap-2">
+        <span class="skill-chip">
+         Figma
+        </span>
+        <span class="skill-chip">
+         Git
+        </span>
+        <span class="skill-chip">
+         GitHub
+        </span>
+        <span class="skill-chip">
+         VS Code
+        </span>
+       </div>
+      </article>
+     </div>
+     <div class="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-800 bg-[#0B1322] p-5 text-xs text-slate-400">
+      <p>
+       <i class="fa-solid fa-laptop-code mr-2 text-cyan-400">
+       </i>
+       <strong class="text-white">
+        Tools:
+       </strong>
+       VS Code, Acode, Laragon, Git
+      </p>
+      <p>
+       <i class="fa-solid fa-seedling mr-2 text-emerald-400">
+       </i>
+       Terus berlatih dan meningkatkan kemampuan
+      </p>
+     </div>
+    </div>
+   </section>
+   <div class="wave-divider">
+    <svg aria-hidden="true" fill="none" preserveaspectratio="none" viewbox="0 0 1440 120">
+     <path d="M0 40C320 10 600 100 900 30C1200 110 1360 20 1440 50V120H0V40Z" fill="#F8FAFC">
+     </path>
+    </svg>
+   </div>
+   
+   <!-- PRESTASI -->
+   <section class="section-light px-5 py-20 sm:py-24 lg:px-8" id="prestasi">
+    <div class="mx-auto max-w-7xl">
+     <span class="section-tag">
+      Prestasi &amp; Sertifikat
+     </span>
+     <div class="mt-5 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+      <h2 class="text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl lg:text-5xl">
+       Pencapaian &amp;
+       <span class="serif-italic text-cyan-700">
+        sertifikasi.
+       </span>
+      </h2>
+      <p class="max-w-md text-sm leading-6 text-slate-600">
+       Dokumentasi penghargaan dan pembelajaran yang mendukung perjalanan saya di bidang teknologi.
+      </p>
+     </div>
+     <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+       <button aria-label="Perbesar sertifikat Hummatech" class="cert-open relative flex aspect-[4/3] w-full items-center justify-center overflow-hidden bg-slate-950 p-3" data-image="sertif3.png" data-subtitle="Pemrograman Web Front End dengan Bootstrap dan PHP Native" data-title="Terbaik Ke-2 Kelas Industri Hummatech" data-year="2026" type="button">
+        <img decoding="async" alt="Sertifikat penghargaan Hummatech" class="h-full w-full object-contain transition duration-500 group-hover:scale-105" loading="lazy" src="sertif3.png"/>
+        <span class="absolute right-3 top-3 rounded-full border border-cyan-400/30 bg-slate-900/90 px-3 py-1 text-[10px] font-bold text-cyan-300">
+         <i class="fa-solid fa-award mr-1.5">
+         </i>
+         Piagam
+        </span>
+       </button>
+       <div class="flex flex-1 flex-col p-5">
+        <p class="text-[10px] font-bold uppercase tracking-widest text-cyan-600">
+         2026 &middot; Kelas Industri
+        </p>
+        <h3 class="mt-2 text-lg font-bold text-white">
+         Terbaik Ke-2 Kelas Industri Hummatech
+        </h3>
+        <p class="mt-2 flex-1 text-xs leading-6 text-slate-300">
+         Penghargaan pembelajaran kelas industri semester genap TA 2025/2026 pada bidang Front-End Web.
+        </p>
+        <button class="cert-open mt-5 inline-flex items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 text-xs font-bold text-cyan-300 transition hover:bg-cyan-400 hover:text-slate-950" data-image="sertif3.png" data-subtitle="Pemrograman Web Front End dengan Bootstrap dan PHP Native" data-title="Terbaik Ke-2 Kelas Industri Hummatech" data-year="2026" type="button">
+         <i class="fa-regular fa-eye">
+         </i>
+         Lihat Piagam
+        </button>
+       </div>
+      </article>
+      <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+       <a class="relative flex aspect-[4/3] items-center justify-center overflow-hidden border-b border-slate-800 bg-slate-950 p-3" href="https://getskill.id/certificate/12202512200239" rel="noopener noreferrer" target="_blank">
+        <img loading="lazy" decoding="async" alt="Sertifikat Java Fundamental Programming Getskill" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 opacity-95 group-hover:opacity-100" src="sertif2.png"/>
+        <span class="absolute right-3 top-3 rounded-full border border-cyan-400/30 bg-slate-900/90 px-3 py-1 text-[10px] font-bold text-cyan-300">
+         Course Certificate
+        </span>
+       </a>
+       <div class="flex flex-1 flex-col p-5">
+        <p class="text-[10px] font-bold uppercase tracking-widest text-cyan-600">
+         2025 &middot; Getskill.id
+        </p>
+        <h3 class="mt-2 text-lg font-bold text-white">
+         Java Fundamental Programming
+        </h3>
+        <p class="mt-2 flex-1 text-xs leading-6 text-slate-300">
+         Pembelajaran dasar pemrograman Java, konsep OOP, dan struktur program.
+        </p>
+        <a class="mt-5 inline-flex items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 text-xs font-bold text-cyan-300 transition hover:bg-cyan-400 hover:text-slate-950" href="https://getskill.id/certificate/12202512200239" rel="noopener noreferrer" target="_blank">
+         <i class="fa-solid fa-arrow-up-right-from-square">
+         </i>
+         Lihat E-Sertifikat
+        </a>
+       </div>
+      </article>
+      <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+       <a class="relative flex aspect-[4/3] items-center justify-center overflow-hidden border-b border-slate-800 bg-slate-950 p-3" href="https://getskill.id/certificate/12202605160960" rel="noopener noreferrer" target="_blank">
+        <img decoding="async" alt="Sertifikat pelatihan pengembangan web" class="h-full w-full object-contain transition duration-500 group-hover:scale-105" loading="lazy" src="sertif1.png"/>
+        <span class="absolute right-3 top-3 rounded-full border border-cyan-400/30 bg-slate-900/90 px-3 py-1 text-[10px] font-bold text-cyan-300">
+         Course Certificate
+        </span>
+       </a>
+       <div class="flex flex-1 flex-col p-5">
+        <p class="text-[10px] font-bold uppercase tracking-widest text-cyan-600">
+         2025 &middot; Pelatihan Web
+        </p>
+        <h3 class="mt-2 text-lg font-bold text-white">
+         Front-End Web Development
+        </h3>
+        <p class="mt-2 flex-1 text-xs leading-6 text-slate-300">
+         Dokumentasi pembelajaran pengembangan antarmuka web. Periksa nama program sesuai sertifikat asli.
+        </p>
+        <a class="mt-5 inline-flex items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 text-xs font-bold text-cyan-300 transition hover:bg-cyan-400 hover:text-slate-950" href="https://getskill.id/certificate/12202605160960" rel="noopener noreferrer" target="_blank">
+         <i class="fa-solid fa-arrow-up-right-from-square">
+         </i>
+         Lihat Sertifikat
+        </a>
+       </div>
+      </article>
+     </div>
+    </div>
+   </section>
+
+   <div class="wave-divider section-light">
+    <svg aria-hidden="true" fill="none" preserveaspectratio="none" viewbox="0 0 1440 120">
+     <path d="M0 0C320 100 600 20 900 80C1200 130 1360 40 1440 80V120H0V0Z" fill="#090D14">
+     </path>
+    </svg>
+   </div>
+   
+<!-- PROYEK -->
+<section class="px-5 py-20 sm:py-24 lg:px-8" id="proyek">
+  <div class="mx-auto max-w-7xl">
+
+    <span class="section-tag">
+      Portofolio &amp; Karya
+    </span>
+
+    <div class="mt-5 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+      <h2 class="text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
+        Proyek pilihan
+        <span class="serif-italic text-cyan-400">
+          yang saya kerjakan.
+        </span>
+      </h2>
+
+      <a
+        class="inline-flex items-center gap-2 self-start rounded-full border border-slate-700 bg-slate-800 px-5 py-3 text-xs font-bold text-white transition hover:border-cyan-400/50 hover:bg-slate-700 md:self-auto"
+        href="#kontak"
+      >
+        Diskusikan Proyek
+        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+      </a>
+    </div>
+
+    <!-- KARTU PROYEK -->
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+
+      <!-- PROYEK 1: PANJERSORE.ID -->
+      <a
+        href="https://pingkanalvina26.github.io/web-panjersore/web-ujian/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Buka website Panjersore.ID di tab baru"
+        class="glass-card glass-card-hover group block overflow-hidden rounded-3xl p-4 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/50 sm:p-5"
+      >
+        <div class="relative aspect-video overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
+          <img
+            alt="Pratinjau website Panjersore.ID"
+            class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+            loading="lazy"
+            src="project1.png"
+          />
+
+          <span class="absolute right-3 top-3 rounded-full border border-amber-400/30 bg-slate-950/90 px-3 py-1 text-[10px] font-bold text-amber-300">
+            Landing Page
+          </span>
+
+          <span class="absolute inset-0 flex items-center justify-center bg-slate-950/0 opacity-0 transition duration-300 group-hover:bg-slate-950/50 group-hover:opacity-100">
+            <span class="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-4 py-2 text-sm font-bold text-slate-950">
+              Lihat Website
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </span>
+          </span>
+        </div>
+
+        <div class="px-1 pb-2 pt-5">
+          <h3 class="text-xl font-bold text-white transition group-hover:text-cyan-300">
+            Panjersore.ID — Website Nasi Goreng
+          </h3>
+
+          <p class="mt-2 text-sm leading-6 text-slate-400">
+            Konsep website pemesanan nasi goreng dengan katalog menu, tampilan responsif, dan informasi produk.
+          </p>
+
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-lg bg-cyan-400/10 px-2.5 py-1 text-[10px] font-bold text-cyan-300">
+              Tailwind CSS
+            </span>
+            <span class="rounded-lg bg-amber-400/10 px-2.5 py-1 text-[10px] font-bold text-amber-300">
+              JavaScript
+            </span>
+            <span class="rounded-lg bg-rose-400/10 px-2.5 py-1 text-[10px] font-bold text-rose-300">
+              PHP / Laravel*
+            </span>
+          </div>
+
+          <div class="mt-5 flex items-center justify-between border-t border-white/10 pt-4">
+            <span class="text-xs text-slate-500">Kunjungi proyek</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-sm text-cyan-400 transition group-hover:-translate-y-1 group-hover:translate-x-1"></i>
+          </div>
+        </div>
+      </a>
+
+      <!-- PROYEK 2: WEBSITE PROFIL RPL -->
+      <a
+        href="https://pingkanalvina26.github.io/Web-RPL/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Buka website Profil RPL SMKN 8 Jember di tab baru"
+        class="glass-card glass-card-hover group block overflow-hidden rounded-3xl p-4 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/50 sm:p-5"
+      >
+        <div class="relative aspect-video overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
+          <img
+            alt="Pratinjau website profil jurusan RPL SMKN 8 Jember"
+            class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105"
+            loading="lazy"
+            src="project2.png"
+          />
+
+          <span class="absolute right-3 top-3 rounded-full border border-cyan-400/30 bg-slate-950/90 px-3 py-1 text-[10px] font-bold text-cyan-300">
+            School Web
+          </span>
+
+          <span class="absolute inset-0 flex items-center justify-center bg-slate-950/0 opacity-0 transition duration-300 group-hover:bg-slate-950/50 group-hover:opacity-100">
+            <span class="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-4 py-2 text-sm font-bold text-slate-950">
+              Lihat Website
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </span>
+          </span>
+        </div>
+
+        <div class="px-1 pb-2 pt-5">
+          <h3 class="text-xl font-bold text-white transition group-hover:text-cyan-300">
+            Website Profil RPL SMKN 8 Jember
+          </h3>
+
+          <p class="mt-2 text-sm leading-6 text-slate-400">
+            Konsep website jurusan untuk memperkenalkan kompetensi, karya siswa, dan informasi program keahlian.
+          </p>
+
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-lg bg-cyan-400/10 px-2.5 py-1 text-[10px] font-bold text-cyan-300">
+              Tailwind CSS
+            </span>
+            <span class="rounded-lg bg-rose-400/10 px-2.5 py-1 text-[10px] font-bold text-rose-300">
+              Laravel*
+            </span>
+            <span class="rounded-lg bg-blue-400/10 px-2.5 py-1 text-[10px] font-bold text-blue-300">
+              MySQL*
+            </span>
+          </div>
+
+          <div class="mt-5 flex items-center justify-between border-t border-white/10 pt-4">
+            <span class="text-xs text-slate-500">Kunjungi proyek</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-sm text-cyan-400 transition group-hover:-translate-y-1 group-hover:translate-x-1"></i>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <p class="mt-4 text-[11px] text-slate-500">
+      *Sesuaikan label teknologi dengan teknologi yang benar-benar digunakan pada proyek.
+    </p>
+
+  </div>
+</section>
+
+<!-- PEMISAH -->
+<div class="wave-divider">
+  <svg
+    aria-hidden="true"
+    fill="none"
+    preserveAspectRatio="none"
+    viewBox="0 0 1440 120"
+    class="block h-auto w-full"
+  >
+    <path
+      d="M0 40C320 10 600 100 900 30C1200 110 1360 20 1440 50V120H0V40Z"
+      fill="#F8FAFC"
+    ></path>
+  </svg>
+</div>
+
+   <!-- PERJALANAN -->
+   <section class="section-light px-5 py-20 sm:py-24 lg:px-8" id="pengalaman">
+    <div class="mx-auto max-w-7xl">
+     <span class="section-tag">
+      Perjalanan Belajar
+     </span>
+     <h2 class="mt-5 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl lg:text-5xl">
+      Langkah kecil,
+      <span class="serif-italic text-blue-700">
+       kemajuan nyata.
+      </span>
+     </h2>
+     <div class="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+      <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+       <span class="inline-flex rounded-full bg-cyan-50 px-3 py-1 text-[10px] font-bold text-cyan-700">
+        2025 &middot; Kelas X
+       </span>
+       <h3 class="mt-4 font-bold text-slate-900">
+        Awal Belajar RPL
+       </h3>
+       <p class="mt-2 text-xs leading-6 text-slate-600">
+        Mengenal logika pemrograman, algoritma, HTML, CSS, dan dasar Java.
+       </p>
+      </article>
+      <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+       <span class="inline-flex rounded-full bg-blue-50 px-3 py-1 text-[10px] font-bold text-blue-700">
+        2026 &middot; Kelas XI
+       </span>
+       <h3 class="mt-4 font-bold text-slate-900">
+        Pengembangan Web
+       </h3>
+       <p class="mt-2 text-xs leading-6 text-slate-600">
+        Berlatih membuat tampilan web, menambahkan interaksi, dan mengolah data.
+       </p>
+      </article>
+      <article class="rounded-2xl border border-cyan-300 bg-white p-6 shadow-sm ring-2 ring-cyan-100">
+       <span class="inline-flex rounded-full bg-emerald-50 px-3 py-1 text-[10px] font-bold text-emerald-700">
+        Saat Ini
+       </span>
+       <h3 class="mt-4 font-bold text-slate-900">
+        Backend &amp; Database
+       </h3>
+       <p class="mt-2 text-xs leading-6 text-slate-600">
+        Memperdalam PHP, pengenalan Laravel, MySQL, dan konsep CRUD.
+       </p>
+      </article>
+      <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+       <span class="inline-flex rounded-full bg-purple-50 px-3 py-1 text-[10px] font-bold text-purple-700">
+        Target Mendatang
+       </span>
+       <h3 class="mt-4 font-bold text-slate-900">
+        PKL &amp; Kolaborasi
+       </h3>
+       <p class="mt-2 text-xs leading-6 text-slate-600">
+        Mempersiapkan diri untuk praktik kerja lapangan dan pengalaman proyek nyata.
+       </p>
+      </article>
+     </div>
+    </div>
+   </section>
+   <div class="wave-divider section-light">
+    <svg aria-hidden="true" fill="none" preserveaspectratio="none" viewbox="0 0 1440 120">
+     <path d="M0 0C360 90 720 10 1080 80C1280 120 1380 30 1440 70V120H0V0Z" fill="#090D14">
+     </path>
+    </svg>
+   </div>
+   <!-- TESTIMONI -->
+   <section class="px-5 py-20 sm:py-24 lg:px-8" id="testimoni">
+    <div class="mx-auto max-w-7xl">
+     <span class="section-tag">
+      Ulasan &amp; Apresiasi
+     </span>
+     <h2 class="mt-5 max-w-3xl text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
+      Kepercayaan tumbuh dari
+      <span class="serif-italic text-cyan-400">
+       proses yang baik.
+      </span>
+     </h2>
+     <div class="mt-10 grid gap-5 md:grid-cols-3">
+      <article class="glass-card rounded-2xl p-6 sm:p-7">
+       <i class="fa-solid fa-quote-left text-2xl text-cyan-400">
+       </i>
+       <p class="mt-4 text-sm leading-7 text-slate-300">
+        &ldquo;Pingkan Alvina telah melaksanakan pengembangan aplikasi web profil sebagai proyek pembelajaran. Penilaian dilakukan berdasarkan kemampuan merencanakan, mengembangkan, menguji, dan mempresentasikan aplikasi.&rdquo;
+       </p>
+       <div class="mt-6 border-t border-white/10 pt-4">
+        <p class="text-sm font-bold text-white">
+         Bapak Kukuh Suprapto, S.Kom.
+        </p>
+        <p class="mt-1 text-xs text-slate-500">
+         Guru Produktif RPL
+        </p>
+       </div>
+      </article>
+      <article class="glass-card rounded-2xl p-6 sm:p-7">
+       <i class="fa-solid fa-quote-left text-2xl text-blue-400">
+       </i>
+       <p class="mt-4 text-sm leading-7 text-slate-300">
+        &ldquo;Hasil pengerjaan aplikasi sesuai ekspektasi, baik dari desain maupun fungsinya. Pingkan teliti dan berinisiatif menambahkan detail yang membantu meningkatkan hasil akhir.&rdquo;
+       </p>
+       <div class="mt-6 border-t border-white/10 pt-4">
+        <p class="text-sm font-bold text-white">
+         Kak Ira Amelia
+        </p>
+        <p class="mt-1 text-xs text-slate-500">
+         Klien / UMKM
+        </p>
+       </div>
+      </article>
+      <article class="glass-card rounded-2xl p-6 sm:p-7">
+       <i class="fa-solid fa-quote-left text-2xl text-purple-400">
+       </i>
+       <p class="mt-4 text-sm leading-7 text-slate-300">
+        &ldquo;Saya mengapresiasi usaha dan kerja sama dalam tim. Komunikasi, kemauan belajar, dan perhatian terhadap detail sangat penting dalam menyelesaikan proyek bersama.&rdquo;
+       </p>
+       <div class="mt-6 border-t border-white/10 pt-4">
+        <p class="text-sm font-bold text-white">
+         Risma Anita
+        </p>
+        <p class="mt-1 text-xs text-slate-500">
+         Teman Tim RPL
+        </p>
+       </div>
+      </article>
+     </div>
+     <p class="mt-4 text-[11px] text-slate-500">
+      Pastikan kutipan dan nama pemberi testimoni telah mendapat izin serta sesuai dengan pernyataan aslinya.
+     </p>
+    </div>
+   </section>
+   <div class="wave-divider">
+    <svg aria-hidden="true" fill="none" preserveaspectratio="none" viewbox="0 0 1440 120">
+     <path d="M0 30C280 100 560 20 840 80C1120 130 1320 30 1440 60V120H0V30Z" fill="#F8FAFC">
+     </path>
+    </svg>
+   </div>
+   <!-- CTA -->
+   <section class="section-light px-5 py-20 sm:py-24 lg:px-8">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-10 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm sm:p-12 lg:flex-row">
+     <div class="max-w-2xl text-center lg:text-left">
+      <span class="section-tag">
+       Kerja Sama &amp; Kolaborasi
+      </span>
+      <h2 class="mt-5 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl lg:text-5xl">
+       Punya ide menarik?
+       <span class="serif-italic text-blue-700">
+        Mari wujudkan bersama.
+       </span>
+      </h2>
+      <p class="mt-4 text-sm leading-7 text-slate-600">
+       Terbuka untuk berdiskusi mengenai proyek website, kolaborasi belajar, dan peluang pengembangan kemampuan.
+      </p>
+      <a class="mt-7 inline-flex items-center gap-3 rounded-full bg-slate-900 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-cyan-700" href="#kontak">
+       Hubungi Saya
+       <i class="fa-solid fa-arrow-right text-xs">
+       </i>
+      </a>
+     </div>
+     <div class="grid h-44 w-44 shrink-0 rotate-6 place-items-center rounded-[2rem] bg-gradient-to-br from-cyan-400 to-blue-600 shadow-xl shadow-cyan-900/15 sm:h-52 sm:w-52">
+      <i class="fa-solid fa-laptop-code -rotate-6 text-6xl text-white sm:text-7xl">
+      </i>
+     </div>
+    </div>
+   </section>
+   <div class="wave-divider section-light">
+    <svg aria-hidden="true" fill="none" preserveaspectratio="none" viewbox="0 0 1440 120">
+     <path d="M0 0C320 80 640 10 960 70C1280 110 1380 20 1440 50V120H0V0Z" fill="#090D14">
+     </path>
+    </svg>
+   </div>
+   <!-- KONTAK -->
+   <section class="px-5 py-20 sm:py-24 lg:px-8" id="kontak">
+    <div class="mx-auto max-w-7xl">
+     <!-- Header -->
+     <div class="mx-auto max-w-2xl text-center">
+      <span class="section-tag">
+       Hubungi Saya
+      </span>
+      <h2 class="mt-5 text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl">
+       Mari terhubung &amp;
+       <span class="serif-italic text-cyan-400">
+        berdiskusi.
+       </span>
+      </h2>
+      <p class="mt-4 text-sm leading-7 text-slate-400">
+       Untuk pertanyaan, kerja sama, atau diskusi proyek, kamu bisa
+
+        menghubungi saya melalui kontak berikut.
+      </p>
+     </div>
+     <!-- Konten Kontak -->
+     <div class="mt-10 grid items-start gap-6 lg:grid-cols-5">
+      <!-- Informasi Kontak -->
+      <div class="space-y-4 lg:col-span-2">
+       <!-- WhatsApp -->
+       <div class="glass-card flex items-start gap-4 rounded-2xl p-5">
+        <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-emerald-500/10 text-xl text-emerald-400">
+         <i class="fa-brands fa-whatsapp">
+         </i>
+        </span>
+        <div class="min-w-0 flex-1">
+         <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+          WhatsApp
+         </p>
+         <p class="mt-1 text-sm font-bold text-white">
+          +62 823-3888-0467
+         </p>
+         <a class="mt-3 inline-flex items-center gap-2 text-xs font-semibold text-emerald-400 transition hover:text-emerald-300" href="https://wa.me/6282338880467" rel="noopener noreferrer" target="_blank">
+          Chat via WhatsApp
+          <i class="fa-solid fa-arrow-right text-[10px]">
+          </i>
+         </a>
+        </div>
+       </div>
+       <!-- Email -->
+       <div class="glass-card flex items-start gap-4 rounded-2xl p-5">
+        <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-cyan-500/10 text-xl text-cyan-300">
+         <i class="fa-regular fa-envelope">
+         </i>
+        </span>
+        <div class="min-w-0 flex-1">
+         <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+          Email
+         </p>
+         <a class="mt-1 block break-all text-sm font-bold text-white transition hover:text-cyan-400" href="mailto:pingkanalvina58@gmail.com">
+          pingkanalvina58@gmail.com
+         </a>
+         <p class="mt-2 text-xs leading-5 text-slate-400">
+          Klik alamat email untuk mengirim pesan.
+         </p>
+        </div>
+       </div>
+       <!-- Lokasi -->
+       <div class="glass-card flex items-start gap-4 rounded-2xl p-5">
+        <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-blue-500/10 text-xl text-blue-300">
+         <i class="fa-solid fa-location-dot">
+         </i>
+        </span>
+        <div class="min-w-0 flex-1">
+         <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+          Lokasi
+         </p>
+         <p class="mt-1 text-sm font-bold text-white">
+          Jember, Jawa Timur
+         </p>
+         <p class="mt-1 text-xs text-slate-400">
+          Indonesia
+         </p>
+        </div>
+       </div>
+       <!-- Media Sosial -->
+       <div class="glass-card rounded-2xl p-5">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-300">
+         Profil &amp; Media Sosial
+        </p>
+        <p class="mt-2 text-xs leading-5 text-slate-400">
+         Temukan profil dan proyek saya melalui media sosial berikut.
+        </p>
+        <div class="mt-4 grid grid-cols-2 gap-3">
+         <a class="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-800 px-3 py-3 text-xs font-semibold text-slate-300 transition duration-300 hover:bg-cyan-500 hover:text-slate-950" href="https://github.com/pingkanalvina26" rel="noopener noreferrer" target="_blank">
+          <i class="fa-brands fa-github text-sm">
+          </i>
+          GitHub
+         </a>
+         <a class="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-800 px-3 py-3 text-xs font-semibold text-slate-300 transition duration-300 hover:bg-pink-600 hover:text-white" href="https://www.instagram.com/pngk.delry/" rel="noopener noreferrer" target="_blank">
+          <i class="fa-brands fa-instagram text-sm">
+          </i>
+          Instagram
+         </a>
+        </div>
+       </div>
+      </div>
+      <!-- Formulir Kontak -->
+      <div class="glass-card rounded-3xl p-6 sm:p-8 lg:col-span-3">
+       <h3 class="text-xl font-bold text-white">
+        Kirim pesan melalui email
+       </h3>
+       <p class="mt-2 text-xs leading-5 text-slate-400">
+        Isi formulir di bawah ini. Gmail akan terbuka dengan pesan yang
+
+    sudah disiapkan untuk dikirim.
+       </p>
+       <form class="mt-6 space-y-5" id="contactForm">
+        <!-- Nama dan Email -->
+        <div class="grid gap-4 sm:grid-cols-2">
+         <div>
+          <label class="mb-2 block text-xs font-semibold text-slate-300" for="contactName">
+           Nama lengkap
+          </label>
+          <input autocomplete="name" class="field" id="contactName" maxlength="80" name="name" placeholder="Nama kamu" required="" type="text"/>
+         </div>
+         <div>
+          <label class="mb-2 block text-xs font-semibold text-slate-300" for="contactEmail">
+           Alamat email
+          </label>
+          <input autocomplete="email" class="field" id="contactEmail" maxlength="120" name="email" placeholder="nama@email.com" required="" type="email"/>
+         </div>
+        </div>
+        <!-- Subjek -->
+        <div>
+         <label class="mb-2 block text-xs font-semibold text-slate-300" for="contactSubject">
+          Subjek
+         </label>
+         <input class="field" id="contactSubject" maxlength="120" name="subject" placeholder="Contoh: Diskusi proyek website" required="" type="text"/>
+        </div>
+        <!-- Isi Pesan -->
+        <div>
+         <label class="mb-2 block text-xs font-semibold text-slate-300" for="contactMessage">
+          Isi pesan
+         </label>
+         <textarea class="field resize-y" id="contactMessage" maxlength="3000" name="message" placeholder="Tuliskan pesanmu di sini..." required="" rows="5"></textarea>
+        </div>
+        <!-- Tombol Kirim -->
+        <button class="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-3.5 text-sm font-bold text-white shadow-lg shadow-cyan-500/15 transition hover:brightness-110" type="submit">
+         Buka Gmail dan Kirim
+         <i class="fa-solid fa-paper-plane text-xs">
+         </i>
+        </button>
+        <!-- Notifikasi -->
+        <p aria-live="polite" class="hidden rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-3 text-xs leading-5 text-emerald-300" id="formNotice" role="status">
+        </p>
+       </form>
+      </div>
+
+      <!-- MODAL SERTIFIKAT -->
+      <div aria-labelledby="certModalTitle" aria-modal="true" class="fixed inset-0 z-[70] hidden items-center justify-center bg-slate-950/90 p-4 backdrop-blur-sm" id="certModal" role="dialog">
+       <div class="relative max-h-[92vh] w-full max-w-4xl overflow-auto rounded-2xl border border-slate-700 bg-[#101827] p-4 shadow-2xl sm:p-6">
+        <button aria-label="Tutup sertifikat" class="absolute right-3 top-3 z-10 grid h-10 w-10 place-items-center rounded-full border border-slate-600 bg-slate-900 text-white transition hover:bg-slate-700" id="closeCertModal" type="button">
+         <i class="fa-solid fa-xmark">
+         </i>
+        </button>
+        <p class="text-xs font-bold uppercase tracking-widest text-cyan-300" id="certModalYear">
+        </p>
+        <h3 class="mt-2 pr-12 text-xl font-bold text-white sm:text-2xl" id="certModalTitle">
+        </h3>
+        <p class="mt-2 text-sm text-slate-400" id="certModalSubtitle">
+        </p>
+        <div class="mt-5 flex min-h-48 items-center justify-center rounded-xl bg-slate-950 p-2">
+         <img alt="" class="max-h-[65vh] w-full object-contain" id="certModalImage" src=""/>
+        </div>
+       </div>
+      </div>
+      <style>
+       .skill-chip { display: inline-flex; border: 1px solid #334155; border-radius: 8px; background: #0F172A; padding: 6px 10px; color: #CBD5E1; font: 500 11px ui-monospace, SFMono-Regular, Menlo, monospace; }
+      </style>
+      <script>
+       // ==============================
+
+  // MENU SELULER
+
+  // ==============================
+
+  const menuToggle = document.getElementById('menuToggle');
+
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  if (menuToggle && mobileMenu) {
+
+    menuToggle.addEventListener('click', () => {
+
+      const isOpen = !mobileMenu.classList.contains('hidden');
+
+      mobileMenu.classList.toggle('hidden', isOpen);
+
+      menuToggle.setAttribute('aria-expanded', String(!isOpen));
+
+      menuToggle.innerHTML = isOpen
+
+        ? '<i class="fa-solid fa-bars"></i>'
+
+        : '<i class="fa-solid fa-xmark"></i>';
+
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+
+      link.addEventListener('click', () => {
+
+        mobileMenu.classList.add('hidden');
+
+        menuToggle.setAttribute('aria-expanded', 'false');
+
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+
+      });
+
+    });
+
+  }
+
+  // ==============================
+
+  // MODAL PREVIEW SERTIFIKAT
+
+  // ==============================
+
+  const certModal = document.getElementById('certModal');
+
+  const closeCertModal = document.getElementById('closeCertModal');
+
+  const certModalTitle = document.getElementById('certModalTitle');
+
+  const certModalSubtitle = document.getElementById('certModalSubtitle');
+
+  const certModalYear = document.getElementById('certModalYear');
+
+  const certModalImage = document.getElementById('certModalImage');
+
+  let previousFocus = null;
+
+  function openCertModal(button) {
+
+    if (
+
+      !certModal ||
+
+      !closeCertModal ||
+
+      !certModalTitle ||
+
+      !certModalSubtitle ||
+
+      !certModalYear ||
+
+      !certModalImage
+
+    ) return;
+
+    previousFocus = document.activeElement;
+
+    certModalTitle.textContent = button.dataset.title || 'Sertifikat';
+
+    certModalSubtitle.textContent = button.dataset.subtitle || '';
+
+    certModalYear.textContent = button.dataset.year || '';
+
+    certModalImage.src = button.dataset.image || '';
+
+    certModalImage.alt = 'Pratinjau ' + certModalTitle.textContent;
+
+    certModal.classList.remove('hidden');
+
+    certModal.classList.add('flex');
+
+    document.body.style.overflow = 'hidden';
+
+    closeCertModal.focus();
+
+  }
+
+  function hideCertModal() {
+
+    if (!certModal) return;
+
+    certModal.classList.add('hidden');
+
+    certModal.classList.remove('flex');
+
+    document.body.style.overflow = '';
+
+    if (certModalImage) {
+
+      certModalImage.src = '';
+
+    }
+
+    if (previousFocus && typeof previousFocus.focus === 'function') {
+
+      previousFocus.focus();
+
+    }
+
+  }
+
+  document.querySelectorAll('.cert-open').forEach(button => {
+
+    button.addEventListener('click', () => openCertModal(button));
+
+  });
+
+  if (closeCertModal) {
+
+    closeCertModal.addEventListener('click', hideCertModal);
+
+  }
+
+  if (certModal) {
+
+    certModal.addEventListener('click', event => {
+
+      if (event.target === certModal) {
+
+        hideCertModal();
+
+      }
+
+    });
+
+  }
+
+  document.addEventListener('keydown', event => {
+
+    if (
+
+      event.key === 'Escape' &&
+
+      certModal &&
+
+      !certModal.classList.contains('hidden')
+
+    ) {
+
+      hideCertModal();
+
+    }
+
+  });
+
+  // ==============================
+
+  // FORMULIR KONTAK - GMAIL
+
+  // ==============================
+
+  const CONTACT_EMAIL = 'pingkanalvina58@gmail.com';
+
+  const contactForm = document.getElementById('contactForm');
+
+  const formNotice = document.getElementById('formNotice');
+
+  if (contactForm && formNotice) {
+
+    contactForm.addEventListener('submit', event => {
+
+      event.preventDefault();
+
+      const name = document.getElementById('contactName').value.trim();
+
+      const email = document.getElementById('contactEmail').value.trim();
+
+      const subject = document.getElementById('contactSubject').value.trim();
+
+      const message = document.getElementById('contactMessage').value.trim();
+
+      if (!name || !email || !subject || !message) {
+
+        formNotice.textContent = 'Mohon lengkapi semua kolom terlebih dahulu.';
+
+        formNotice.classList.remove('hidden');
+
+        return;
+
+      }
+
+      const body =
+
+        `Nama: ${name}\n` +
+
+        `Email pengirim: ${email}\n\n` +
+
+        `Pesan:\n${message}`;
+
+      const gmailURL =
+
+        'https://mail.google.com/mail/?view=cm&fs=1' +
+
+        '&to=' + encodeURIComponent(CONTACT_EMAIL) +
+
+        '&su=' + encodeURIComponent(subject) +
+
+        '&body=' + encodeURIComponent(body);
+
+      formNotice.textContent =
+
+        'Gmail akan dibuka dengan draft pesan yang sudah terisi. ' +
+
+        'Periksa kembali pesanmu, lalu tekan Kirim di Gmail.';
+
+      formNotice.classList.remove('hidden');
+
+      // Buka Gmail di tab baru
+
+      const newTab = window.open(
+
+        gmailURL,
+
+        '_blank',
+
+        'noopener,noreferrer'
+
+      );
+
+      // Beri tahu pengguna jika browser memblokir tab baru
+
+      if (!newTab) {
+
+        formNotice.textContent =
+
+          'Gmail tidak terbuka otomatis. Izinkan pop-up browser, ' +
+
+          'atau klik tombol kirim sekali lagi.';
+
+      }
+
+    });
+
+  }
+
+  // ==============================
+
+  // TAHUN OTOMATIS DI FOOTER
+
+  // ==============================
+
+  const currentYear = document.getElementById('currentYear');
+
+  if (currentYear) {
+
+    currentYear.textContent = new Date().getFullYear();
+
+  }
+      </script>
+     </div>
+    </div>
+   </section>
+  </main>
+
+  <!-- FOOTER -->
+      <footer class="border-t border-white/10 bg-[#070B12] px-5 py-10 lg:px-8">
+       <div class="mx-auto flex max-w-7xl flex-col justify-between gap-6 sm:flex-row sm:items-center">
+        <a class="flex items-center gap-3" href="#home">
+         <span class="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 font-extrabold text-white">
+          PA
+         </span>
+         <span>
+          <span class="block text-xs font-extrabold text-white">
+           PINGKAN ALVINA AGASTA
+          </span>
+          <span class="mt-1 block text-[10px] text-slate-500">
+           Portofolio Siswi Rekayasa Perangkat Lunak
+          </span>
+         </span>
+        </a>
+        <p class="text-xs text-slate-500">
+         &copy;
+         <span id="currentYear">
+          2026
+         </span>
+         Pingkan Alvina Agasta. Dibuat dengan semangat belajar.
+        </p>
+        <a class="text-xs font-semibold text-cyan-300 transition hover:text-white" href="#home">
+         Kembali ke atas &uarr;
+        </a>
+       </div>
+      </footer>
+
+ </body>
+</html>
